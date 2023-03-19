@@ -64,11 +64,12 @@ proxy-groups:
       - FreeProxy
     proxies:
       - DIRECT  
-  - name: Mannul
+  - name: PROXY
     type: select
     use:
       - FreeProxy
     proxies:
+      - Auto
       - DIRECT
 
 rule-providers:
