@@ -2,7 +2,7 @@ proxy-providers:
   FreeProxy:
     type: http
     url: "https://raw.fastgit.org/fanlushuai/freeClash/main/proxies.yaml"
-    path: ./FreeProxy.yaml
+    path: ./providers/FreeProxy.yaml
     interval: 3600 # one hour
     health-check:
       enable: true
@@ -10,7 +10,7 @@ proxy-providers:
       interval: 300
   # United States:
   #   type: file
-  #   path: ./FreeProxy.yaml
+  #   path: ./providers/FreeProxy.yaml
   #   filter: "United States|美国"
   #   health-check:
   #     enable: true
