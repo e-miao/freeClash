@@ -60,17 +60,16 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
-    proxies:
+    use:
       - FreeProxy
-  - name: PROXY
-    type: select
     proxies:
-      - FreeProxy
-      - DIRECT
-  - name: FreeProxy
+      - DIRECT  
+  - name: Mannul
     type: select
     use:
       - FreeProxy
+    proxies:
+      - DIRECT
 
 rule-providers:
   reject:
