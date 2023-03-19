@@ -8,14 +8,14 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-  United States:
-    type: file
-    path: ./FreeProxy.yaml
-    filter: "United States|美国"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-    interval: 3600
+  # United States:
+  #   type: file
+  #   path: ./FreeProxy.yaml
+  #   filter: "United States|美国"
+  #   health-check:
+  #     enable: true
+  #     url: http://www.gstatic.com/generate_204
+  #   interval: 3600
 mixed-port: 7890
 allow-lan: false
 mode: rule
@@ -188,5 +188,5 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,PROXY
-  - RULE-SET,Netflix,Auto United States
+  # - RULE-SET,Netflix,Auto United States
   - MATCH,PROXY
