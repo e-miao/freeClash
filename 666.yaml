@@ -11,7 +11,7 @@ proxy-providers:
   United States:
     type: file
     path: ./FreeProxy.yaml
-    filter: 'United States|美国'
+    filter: "United States|美国"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -36,18 +36,18 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.lan'
-    - '*.localdomain'
-    - '*.example'
-    - '*.invalid'
-    - '*.localhost'
-    - '*.test'
-    - '*.local'
-    - '*.home.arpa'
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
     - router.asus.com
     - localhost.sec.qq.com
     - localhost.ptlogin2.qq.com
-    - '+.msftconnecttest.com'
+    - "+.msftconnecttest.com"
 tun:
   enable: true
   stack: system
@@ -70,7 +70,7 @@ proxy-groups:
     interval: 300
     use:
       - United States
-      
+
   - name: Auto All
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -164,8 +164,8 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 36000
-  
-  Netflix: 
+
+  Netflix:
     type: http
     behavior: classical
     url: https://cdn.jsdelivr.net/gh/Semporia/Clash@master/Rule/Netflix.yaml
