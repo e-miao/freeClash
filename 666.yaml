@@ -9,12 +9,12 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   United States:
-  type: file
-  path: ./FreeProxy.yaml
-  filter: 'United States|美国'
-  health-check:
-    enable: true
-    url: http://www.gstatic.com/generate_204
+    type: file
+    path: ./FreeProxy.yaml
+    filter: 'United States|美国'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
     interval: 3600
 mixed-port: 7890
 allow-lan: false
