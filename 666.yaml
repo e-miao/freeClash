@@ -1,7 +1,7 @@
 proxy-providers:
   FreeProxy:
     type: http
-    url: "https://raw.fastgit.org/fanlushuai/freeClash/main/x.yaml"
+    url: "https://raw.fastgit.org/fanlushuai/freeClash/main/proxies.yaml"
     path: ./FreeProxy.yaml
     interval: 7200
     health-check:
