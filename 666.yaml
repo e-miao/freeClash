@@ -62,15 +62,14 @@ proxy-groups:
     interval: 300
     use:
       - FreeProxy
-    proxies:
-      - DIRECT  
   - name: PROXY
     type: select
-    use:
-      - FreeProxy
     proxies:
       - Auto
       - DIRECT
+    use:
+      - FreeProxy
+
 
 rule-providers:
   reject:
