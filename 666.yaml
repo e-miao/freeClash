@@ -82,7 +82,7 @@ proxy-groups:
     type: select
     proxies:
       - Auto All
-      - Auto United States
+      # - Auto United States
       - DIRECT
     use:
       - FreeProxy
