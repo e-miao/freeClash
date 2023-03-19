@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           curl $(curl 'https://suo.yt/short'  -H 'authority: suo.yt'  -H 'accept: application/json, text/plain, */*'  -H 'accept-language: zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7'  -H 'cache-control: no-cache'  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundarynuK3T0RzCNlEvBu9'  -H 'origin: https://acl4ssr-sub.github.io'  -H 'pragma: no-cache'  -H 'referer: https://acl4ssr-sub.github.io/'  -H 'save-data: on'  -H 'sec-ch-ua: "Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"'  -H 'sec-ch-ua-mobile: ?0'  -H 'sec-ch-ua-platform: "Windows"'  -H 'sec-fetch-dest: empty'  -H 'sec-fetch-mode: cors'  -H 'sec-fetch-site: cross-site'  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36' --data-raw $'------WebKitFormBoundarynuK3T0RzCNlEvBu9\r\nContent-Disposition: form-data; name="longUrl"\r\n\r\naHR0cHM6Ly9zdWIueGV0b24uZGV2L3N1Yj90YXJnZXQ9Y2xhc2gmbmV3X25hbWU9dHJ1ZSZ1cmw9aHR0cHMlM0ElMkYlMkZyYXcuZmFzdGdpdC5vcmclMkZmcmVlZnElMkZmcmVlJTJGbWFzdGVyJTJGdjImaW5zZXJ0PWZhbHNlJmNvbmZpZz1odHRwcyUzQSUyRiUyRnJhdy5naXRodWJ1c2VyY29udGVudC5jb20lMkZBQ0w0U1NSJTJGQUNMNFNTUiUyRm1hc3RlciUyRkNsYXNoJTJGY29uZmlnJTJGQUNMNFNTUl9PbmxpbmVfQWRibG9ja1BsdXMuaW5p\r\n------WebKitFormBoundarynuK3T0RzCNlEvBu9--\r\n' --compressed | sed 's/,/\n/g' | grep "ShortUrl" | sed 's/":"/\n/g'| sed '1d' | sed 's/"}//g') -L -o x.yaml
+     
       - uses: petronny/git-config-user@master
         with:
           path: .
@@ -27,4 +28,4 @@ jobs:
           git add x.yaml
           git commit -m "[$(LANG=C date)] auto update" || exit 0
           [ -n "${{ secrets.READ_ONLY }}" ] && git show && exit 0
-          git push origin master
+          git push origin main
