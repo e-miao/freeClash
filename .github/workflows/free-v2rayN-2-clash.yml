@@ -22,8 +22,8 @@ jobs:
     steps:
       - name: get clash config
         run: |
-          curl http://localhost:80/version
-          curl 'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2' -o clash.yaml 
+          curl -k http://localhost:80/version
+          curl -k 'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2' -o clash.yaml 
           
       - name: get proxies 
         run: |
