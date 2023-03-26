@@ -20,6 +20,10 @@ jobs:
         ports:
            - 80:25500
     steps:
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+           time: '5s'
       - name: get clash config
         run: |
           curl -k -L -v http://localhost:80/version
