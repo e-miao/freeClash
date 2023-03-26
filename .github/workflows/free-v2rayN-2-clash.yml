@@ -15,14 +15,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     services:
-      service-name-1:
+      sub:
         image: tindy2013/subconverter
         ports:
            - 25500:25500
     steps:
       - name: get clash config
         run: |
-          curl -o clash.yaml http://localhost:25500/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2
+          curl -v -o clash.yaml http://localhost:25500/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2
 
       - name: get proxies 
         run: |
