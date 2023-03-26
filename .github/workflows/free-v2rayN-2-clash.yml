@@ -24,8 +24,9 @@ jobs:
         run: |
           curl http://localhost:80/version
 
-          curl 'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2' -o clash.yaml
-
+          curl -o clash.yaml /
+          'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2'
+          
       - name: get proxies 
         run: |
           echo "proxies:" > proxies.yaml
