@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: get clash config
         run: |
-        curl -o clash.yaml http://127.0.0.1:25500/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2
+          curl -o clash.yaml http://127.0.0.1:25500/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2
 
       - name: get proxies 
         run: |
