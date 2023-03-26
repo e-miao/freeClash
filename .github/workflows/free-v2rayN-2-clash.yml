@@ -18,13 +18,13 @@ jobs:
       sub:
         image: tindy2013/subconverter
         ports:
-           - 25500:25500
+           - 80:25500
     steps:
       - name: get clash config
         run: |
-          curl http://localhost:25500/version
+          curl http://localhost:80/version
 
-          curl 'http://localhost:25500/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2' -o clash.yaml
+          curl 'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.iqiq.io%2Ffreefq%2Ffree%2Fmaster%2Fv2' -o clash.yaml
 
       - name: get proxies 
         run: |
