@@ -20,21 +20,13 @@ jobs:
         ports:
            - 80:25500
         options: >-
-         # --health-cmd 'curl http://localhost:25500/version |grep "subconverter" || exit 1'
-         --health-cmd ' wget http://localhost:25500/version -O version'
-         --health-interval 20s
-         --health-timeout 5s
-         --health-retries 5
+         --health-cmd "wget http://localhost:25500/version -O version"
+         --health-interval 3s
+         --health-timeout 1s
+         --health-retries 3
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
-#       - name: Sleep for 30 seconds
-#         uses: jakejarvis/wait-action@master
-#         with:
-#            time: '5s'
-
-      
 
       - name: get clash config
         run: |
