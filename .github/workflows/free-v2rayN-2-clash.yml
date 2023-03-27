@@ -20,8 +20,8 @@ jobs:
         ports:
            - 80:25500
         options: >-
-          --health-cmd 'curl http://localhost:25500/version |grep "subconv" || exit 1'
-          --health-interval 10s
+          --health-cmd 'curl http://localhost:25500/version |grep "subconverter" || exit 1'
+          --health-interval 20s
           --health-timeout 5s
           --health-retries 5
     steps:
