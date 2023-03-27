@@ -19,17 +19,24 @@ jobs:
         image: tindy2013/subconverter
         ports:
            - 80:25500
+        options: >-
+          --health-cmd 'curl -v http://localhost:80/version'
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-           time: '5s'
+#       - name: Sleep for 30 seconds
+#         uses: jakejarvis/wait-action@master
+#         with:
+#            time: '5s'
+
+      
+
       - name: get clash config
         run: |
-          curl -v http://localhost:80/version
           curl -v -o clash.yaml 'http://localhost:80/sub?target=clash&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffreefq%2Ffree%2Fmaster%2Fv2'
           
       - name: get proxies 
