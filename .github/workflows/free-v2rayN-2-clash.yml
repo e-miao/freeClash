@@ -20,7 +20,7 @@ jobs:
         ports:
            - 80:25500
         options: >-
-          --health-cmd 'curl -v http://localhost:80/version'
+          --health-cmd 'curl -v http://localhost:25500/version'
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
