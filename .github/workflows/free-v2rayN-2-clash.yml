@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0/15 * * * *" # “At every 15th minute from 0 through 59.”  https://crontab.guru/#0/15_*_*_*_*
+    - cron: "0 0 1 * *" # “At every 15th minute from 0 through 59.”  https://crontab.guru/#0/15_*_*_*_*
   workflow_dispatch:
 
 permissions:
